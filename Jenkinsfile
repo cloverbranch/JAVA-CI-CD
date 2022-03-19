@@ -35,7 +35,8 @@ pipeline{
             }
         }
         stage('indentifying misconfigs using datree in helm charts'){
-            steps{
+            agent { label 'k8s' }
+		steps{
                 script{
 
                     dir('kubernetes/') {
